@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatCrumbs - Stop Losing Your AI Context</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                blue: '#2663EB',
+                pale: '#DBEAFE',
+                slate: {
+                  dark: '#1E293B',
+                  medium: '#64748B',
+                  light: '#F8FAFC',
+                  border: '#E2E8F0',
+                }
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Custom path animation for the crumb particles */
+      .crumb-particle {
+        offset-path: path('M 0 50 C 150 50, 250 10, 400 50 C 550 90, 650 50, 800 50');
+        animation: travel 3s infinite linear;
+      }
+
+      @keyframes travel {
+        0% { offset-distance: 0%; opacity: 0; transform: scale(0.5); }
+        10% { opacity: 1; transform: scale(1); }
+        90% { opacity: 1; transform: scale(1); }
+        100% { offset-distance: 100%; opacity: 0; transform: scale(0.5); }
+      }
+
+      .glow-sync {
+        animation: glow-pulse 3s infinite;
+      }
+
+      @keyframes glow-pulse {
+        0%, 100% { box-shadow: 0 0 0px rgba(38, 99, 235, 0); border-color: transparent; }
+        50% { box-shadow: 0 0 15px rgba(38, 99, 235, 0.4); border-color: rgba(38, 99, 235, 0.5); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-brand-slate-dark antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
