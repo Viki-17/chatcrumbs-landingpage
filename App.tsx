@@ -5,9 +5,12 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen w-full flex flex-col font-sans text-brand-slate-dark selection:bg-brand-blue selection:text-white">
         <Navbar />
         <Routes>
