@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link2, Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +28,18 @@ const Navbar: React.FC = () => {
     href: string
   ) => {
     e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     const target = document.querySelector(href);
     if (target) {
       const offset = 80; // height of sticky navbar
@@ -52,7 +67,8 @@ const Navbar: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div
+          <Link
+            to="/"
             className="flex-shrink-0 flex items-center gap-2 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
@@ -64,7 +80,7 @@ const Navbar: React.FC = () => {
             <span className="font-bold text-xl tracking-tight text-brand-slate-dark">
               ChatCrumbs
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
@@ -79,7 +95,7 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <Button variant="primary" size="md">
-              Add to Chrome – It’s Free
+              Add to Chrome
             </Button>
           </div>
 
@@ -109,7 +125,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <Button variant="primary" className="w-full">
-            Add to Chrome – It’s Free
+            Add to Chrome
           </Button>
         </div>
       )}

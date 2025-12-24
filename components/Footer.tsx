@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { Link2, Mail, MessageSquare, X, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
 const Footer: React.FC = () => {
@@ -24,7 +25,7 @@ const Footer: React.FC = () => {
               size="lg"
               className="w-full sm:w-auto px-10"
             >
-              Add to Chrome - Join Beta
+              Add to Chrome
             </Button>
             <Button
               variant="secondary"
@@ -49,17 +50,20 @@ const Footer: React.FC = () => {
             <span>ChatCrumbs</span>
           </div>
 
-          {/* <div className="flex gap-8 text-sm text-brand-slate-medium">
-            <a href="#" className="hover:text-brand-blue transition">
+          <div className="flex gap-8 text-sm text-brand-slate-medium">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-brand-blue transition"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-brand-blue transition">
+            </Link>
+            {/* <a href="#" className="hover:text-brand-blue transition">
               Terms of Service
             </a>
             <a href="#" className="hover:text-brand-blue transition">
               Contact
-            </a>
-          </div> */}
+            </a> */}
+          </div>
 
           <div className="text-sm text-brand-slate-medium/50">
             © {new Date().getFullYear()} ChatCrumbs.
@@ -116,7 +120,7 @@ const Footer: React.FC = () => {
                   />
                 </a>
 
-                <a
+                {/* <a
                   href="#"
                   className="flex items-center gap-4 p-4 rounded-2xl border border-brand-slate-border hover:border-[#5865F2] hover:bg-[#5865F2]/5 transition-all group"
                 >
@@ -156,7 +160,7 @@ const Footer: React.FC = () => {
                     size={16}
                     className="text-slate-300 group-hover:text-[#FF4500]"
                   />
-                </a>
+                </a> */}
               </div>
 
               <div className="mt-8 pt-6 border-t border-brand-slate-border text-center">
