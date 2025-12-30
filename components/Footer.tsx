@@ -24,6 +24,12 @@ const Footer: React.FC = () => {
               variant="primary"
               size="lg"
               className="w-full sm:w-auto px-10"
+              onClick={() =>
+                window.open(
+                  "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
+                  "_blank"
+                )
+              }
             >
               Add to Chrome
             </Button>

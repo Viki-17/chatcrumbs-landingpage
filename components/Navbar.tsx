@@ -94,8 +94,17 @@ const Navbar: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="primary" size="md">
-              Add to Chrome
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() =>
+                window.open(
+                  "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
+                  "_blank"
+                )
+              }
+            >
+              Add to Chrome - It's free!
             </Button>
           </div>
 
@@ -124,8 +133,17 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="primary" className="w-full">
-            Add to Chrome
+          <Button
+            variant="primary"
+            className="w-full"
+            onClick={() =>
+              window.open(
+                "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
+                "_blank"
+              )
+            }
+          >
+            Add to Chrome - It's free!
           </Button>
         </div>
       )}
