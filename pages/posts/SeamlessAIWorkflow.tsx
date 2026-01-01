@@ -382,7 +382,7 @@ const SeamlessAIWorkflow: React.FC = () => {
               </div>
 
               {/* Author Bio */}
-              <div className="mt-16 pt-8 border-t border-brand-slate-border">
+              {/* <div className="mt-16 pt-8 border-t border-brand-slate-border">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 overflow-hidden flex-shrink-0">
                     <User size={24} />
@@ -413,7 +413,7 @@ const SeamlessAIWorkflow: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Sticky Sidebar */}
@@ -459,7 +459,7 @@ const SeamlessAIWorkflow: React.FC = () => {
                     ))}
                   </nav>
 
-                  <div className="mt-8 pt-8 border-t border-brand-slate-border">
+                  {/* <div className="mt-8 pt-8 border-t border-brand-slate-border">
                     <h4 className="font-bold text-brand-slate-dark mb-3 text-sm">
                       Share this article
                     </h4>
@@ -471,7 +471,7 @@ const SeamlessAIWorkflow: React.FC = () => {
                         <Linkedin size={16} /> Share
                       </button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="mt-6 bg-brand-blue/90 text-white rounded-xl p-6 shadow-lg shadow-brand-blue/20">
