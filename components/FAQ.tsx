@@ -6,19 +6,30 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "Is it really free?",
+      question: "How do I organize ChatGPT chats by project?",
       answer:
-        "Yes. ChatCrumbs is in public beta and free to use today. We’re exploring monetization options while continuing to ship features driven by user feedback.",
+        'You can organize ChatGPT chats by using Chatcrumbs to "pin" specific chat URLs to a project-specific context, such as a Google Doc or Notion page. This creates a sidebar list of all relevant AI conversations for that specific work task.',
     },
     {
-      question: "Which AI platforms do you support?",
+      question:
+        "Can I link Claude and Gemini conversations to my work documents?",
       answer:
-        "Currently supports ChatGPT, Claude, and Gemini. More coming soon based on user requests.",
+        'Yes, Chatcrumbs supports ChatGPT, Claude, and Gemini. It allows you to bridge the gap between your "thinking" in AI chat apps and your "building" in apps like Notion, GitHub, and Jira.',
     },
     {
-      question: "Where is my data stored?",
+      question: "What is the best way to save AI prompts for future reference?",
       answer:
-        "Links are stored securely in our database. ChatCrumbs prioritize privacy and do not read the content of your documents or chats beyond identifying the URLs to link them.",
+        "The most efficient way is to use a context-aware browser extension like Chatcrumbs. Instead of manual copy-pasting, you can tag AI threads with custom notes and link them directly to the document where you are working.",
+    },
+    {
+      question: "Does Chatcrumbs work with Notion and Google Docs?",
+      answer:
+        'Absolutely. Chatcrumbs is designed to detect when you are on a "Work App" like Notion or Google Docs and automatically displays the specific AI "breadcrumbs" (chats) you’ve pinned to that document.',
+    },
+    {
+      question: "How do I find a specific AI chat from weeks ago?",
+      answer:
+        "Rather than searching through a chronological history, Chatcrumbs lets you view a curated list of AI threads associated with a specific project. Open your project document, and the Chatcrumbs sidebar will show every relevant AI interaction you’ve saved.",
     },
   ];
 

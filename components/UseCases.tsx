@@ -1,48 +1,112 @@
-import React from 'react';
+import React from "react";
+import {
+  Bot,
+  FileText,
+  Github,
+  Trello,
+  Database,
+  MessageSquare,
+} from "lucide-react";
 
 const UseCases: React.FC = () => {
-  const cases = [
-    {
-      role: "Content Writers",
-      desc: "Trace your article drafts back to the original ideation prompts.",
-      initials: "CW",
-      color: "bg-pink-100 text-pink-600"
-    },
-    {
-      role: "Product Managers",
-      desc: "Link PRD requirements directly to the Gemini research threads that defined them.",
-      initials: "PM",
-      color: "bg-indigo-100 text-indigo-600"
-    },
-    {
-      role: "Researchers",
-      desc: "Keep your source materials and fact-checking chats attached to your final paper.",
-      initials: "RS",
-      color: "bg-orange-100 text-orange-600"
-    }
-  ];
-
   return (
-    <section className="py-24 bg-white border-t border-b border-brand-slate-light">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-brand-slate-dark mb-16">
-          Built for anyone juggling content and AI.
-        </h2>
+    <section className="py-24 bg-white border-t border-b border-brand-slate-light relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-slate-dark mb-4">
+            Supported Apps
+          </h2>
+          <p className="text-xl text-brand-slate-medium max-w-2xl mx-auto">
+            Seamlessly linking your{" "}
+            <span className="text-brand-blue font-semibold">AI Thinking</span>{" "}
+            with your{" "}
+            <span className="text-brand-slate-dark font-semibold">
+              Work Context
+            </span>
+            .
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {cases.map((useCase, index) => (
-            <div key={index} className="flex flex-col items-center p-8 rounded-2xl bg-white border border-brand-slate-border hover:shadow-xl transition-shadow duration-300">
-              <div className={`w-20 h-20 rounded-full ${useCase.color} flex items-center justify-center text-2xl font-bold mb-6 ring-4 ring-white shadow-sm`}>
-                {useCase.initials}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative">
+          {/* Bridge visual for desktop */}
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 border-t-2 border-dashed border-brand-blue/30 z-0"></div>
+          <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-brand-blue text-white rounded-full items-center justify-center z-10 font-bold text-xs shadow-lg">
+            VS
+          </div>
+
+          {/* AI Thinking Column */}
+          <div className="w-full max-w-md bg-brand-slate-light/50 border border-brand-slate-border rounded-2xl p-8 z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-purple-100 text-purple-600 rounded-lg">
+                <Bot size={24} />
               </div>
-              <h3 className="text-xl font-bold text-brand-slate-dark mb-3">
-                {useCase.role}
+              <h3 className="text-xl font-bold text-brand-slate-dark">
+                AI Thinking
               </h3>
-              <p className="text-brand-slate-medium">
-                {useCase.desc}
-              </p>
             </div>
-          ))}
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 bg-white border border-brand-slate-border rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-sm">
+                  GPT
+                </div>
+                <div className="font-semibold text-brand-slate-dark">
+                  ChatGPT
+                </div>
+              </div>
+              <div className="flex items-center gap-4 p-4 bg-white border border-brand-slate-border rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">
+                  CL
+                </div>
+                <div className="font-semibold text-brand-slate-dark">
+                  Claude
+                </div>
+              </div>
+              <div className="flex items-center gap-4 p-4 bg-white border border-brand-slate-border rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-sm">
+                  GM
+                </div>
+                <div className="font-semibold text-brand-slate-dark">
+                  Gemini
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Work Context Column */}
+          <div className="w-full max-w-md bg-brand-slate-light/50 border border-brand-slate-border rounded-2xl p-8 z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-blue-100 text-blue-600 rounded-lg">
+                <Database size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-brand-slate-dark">
+                Work Context
+              </h3>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 bg-white border border-brand-slate-border rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-white border border-brand-slate-border rounded-full flex items-center justify-center text-brand-slate-dark shadow-sm">
+                  <span className="font-bold text-lg">N</span>
+                </div>
+                <div className="font-semibold text-brand-slate-dark">
+                  Notion
+                </div>
+              </div>
+              <div className="flex items-center gap-4 p-4 bg-white border border-brand-slate-border rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center">
+                  <FileText size={20} />
+                </div>
+                <div className="font-semibold text-brand-slate-dark">
+                  Google Docs
+                </div>
+              </div>
+              <div className="flex items-center gap-4 p-4 bg-white border border-brand-slate-border rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <Trello size={20} />
+                </div>
+                <div className="font-semibold text-brand-slate-dark">Jira</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
