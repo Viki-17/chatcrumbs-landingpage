@@ -13,7 +13,7 @@ const BlogIndex: React.FC = () => {
       date: "October 24, 2024",
       readTime: "5 min read",
       category: "Workflow",
-      image: "../../blogAssets/blog1.png",
+      image: "/blogAssets/blog1.png",
     },
     {
       slug: "building-ai-research-library-notion-claude-gemini",
@@ -24,7 +24,7 @@ const BlogIndex: React.FC = () => {
       date: "October 28, 2024",
       readTime: "6 min read",
       category: "Workflow",
-      image: "../../blogAssets/blog2.png",
+      image: "/blogAssets/blog2.png",
     },
   ];
 
