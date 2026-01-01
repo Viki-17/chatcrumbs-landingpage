@@ -15,6 +15,17 @@ const BlogIndex: React.FC = () => {
       category: "Workflow",
       image: "../../blogAssets/blog1.png",
     },
+    {
+      slug: "building-ai-research-library-notion-claude-gemini",
+      title:
+        "Building an AI Research Library: How to Organize Claude & Gemini Threads in Notion",
+      excerpt:
+        "Transform Notion into a true AI research hub. Learn how to link Claude, Gemini, and ChatGPT threads directly to your project pages.",
+      date: "October 28, 2024",
+      readTime: "6 min read",
+      category: "Workflow",
+      image: "../../blogAssets/blog2.png",
+    },
   ];
 
   return (

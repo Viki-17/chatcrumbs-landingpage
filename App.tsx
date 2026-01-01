@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogIndex from "./pages/BlogIndex";
 import SeamlessAIWorkflow from "./pages/posts/SeamlessAIWorkflow";
+import NotionResearchHub from "./pages/posts/NotionResearchHub";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -25,6 +26,10 @@ const App: React.FC = () => {
             <Route
               path="/blog/never-copy-paste-again-seamless-ai-google-docs-workflow"
               element={<SeamlessAIWorkflow />}
+            />
+            <Route
+              path="/blog/building-ai-research-library-notion-claude-gemini"
+              element={<NotionResearchHub />}
             />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
