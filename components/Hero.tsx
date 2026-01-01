@@ -17,9 +17,9 @@ const Hero: React.FC = () => {
             <span>AI Context Linking Tool</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-brand-slate-dark tracking-tight mb-6 leading-[1.1]">
-            Stop Losing Your <br className="hidden md:block" />
+            Pin AI Chats to <br className="hidden md:block" />
             <span className="text-brand-blue relative inline-block">
-              AI Context.
+              Notion & Google Docs
               <svg
                 className="absolute -bottom-2 left-0 w-full"
                 height="8"
@@ -37,8 +37,9 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-brand-slate-medium mb-10 leading-relaxed">
-            ChatCrumbs automatically bridges the gap between your LLMs and your
-            workspace. Never wonder which prompt generated which draft again.
+            Bridge the context gap between your LLM thinking and your document
+            building. The only extension that links{" "}
+            <strong>AI workflow productivity</strong> directly to your projects.
           </p>
         </div>
 

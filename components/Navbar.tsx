@@ -19,8 +19,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Features", href: "#features" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Features", href: "/#features" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const handleLinkClick = (
@@ -28,19 +29,37 @@ const Navbar: React.FC = () => {
     href: string
   ) => {
     e.preventDefault();
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-      setIsMobileMenuOpen(false);
+    setIsMobileMenuOpen(false);
+
+    // Handle standard page navigation (e.g., /blog)
+    if (!href.includes("#")) {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    const target = document.querySelector(href);
+    // Handle anchor links (e.g., /#features)
+    const targetId = href.replace(/^\//, ""); // Removes leading '/' to get '#features'
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const target = document.querySelector(targetId);
+        if (target) {
+          const offset = 80;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = target.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      }, 100);
+      return;
+    }
+
+    // Already on home page, just scroll
+    const target = document.querySelector(targetId);
     if (target) {
       const offset = 80; // height of sticky navbar
       const bodyRect = document.body.getBoundingClientRect().top;
@@ -53,7 +72,6 @@ const Navbar: React.FC = () => {
         behavior: "smooth",
       });
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
