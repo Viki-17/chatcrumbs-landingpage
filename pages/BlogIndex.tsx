@@ -13,8 +13,7 @@ const BlogIndex: React.FC = () => {
       date: "October 24, 2024",
       readTime: "5 min read",
       category: "Workflow",
-      image:
-        "https://images.unsplash.com/photo-1499750310159-5b5f22138751?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "../../blogAssets/blog1.png",
     },
   ];
 
