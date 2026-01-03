@@ -10,7 +10,7 @@ const BlogIndex: React.FC = () => {
       slug: "never-copy-paste-again-seamless-ai-google-docs-workflow",
       excerpt:
         "Modern writing isn’t blocked by a lack of ideas—it’s blocked by fragmented workflow. Discover how to eliminate the 'Tab-Switching Tax' and link your AI research directly to your writing.",
-      date: "October 24, 2024",
+      date: "December 24, 2025",
       readTime: "5 min read",
       category: "Workflow",
       image: "/blogAssets/blog1.png",
@@ -21,7 +21,7 @@ const BlogIndex: React.FC = () => {
         "Building an AI Research Library: How to Organize Claude & Gemini Threads in Notion",
       excerpt:
         "Transform Notion into a true AI research hub. Learn how to link Claude, Gemini, and ChatGPT threads directly to your project pages.",
-      date: "October 28, 2024",
+      date: "December 28, 2025",
       readTime: "6 min read",
       category: "Workflow",
       image: "/blogAssets/blog2.png",

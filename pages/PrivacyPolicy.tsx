@@ -1,8 +1,16 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const PrivacyPolicy: React.FC = () => {
   return (
     <main className="flex-grow bg-brand-slate-light pt-32 pb-20">
+      <Helmet>
+        <title>Privacy Policy | Chatcrumbs</title>
+        <meta
+          name="description"
+          content="Privacy Policy for Chatcrumbs. Learn how we collect, use, and safeguard your information."
+        />
+      </Helmet>
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="bg-white rounded-3xl shadow-xl border border-brand-slate-border p-8 md:p-12">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight text-brand-slate-dark">

@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const NotFound: React.FC = () => {
   return (
     <main className="flex-grow flex items-center justify-center bg-brand-slate-light min-h-[60vh] py-20">
+      <Helmet>
+        <title>404 - Page Not Found | Chatcrumbs</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <div className="text-center px-4">
         <h1 className="text-6xl md:text-9xl font-extrabold text-brand-blue mb-4">
           404

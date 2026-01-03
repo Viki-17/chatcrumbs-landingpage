@@ -14,8 +14,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => {
+  const helmetContext = {};
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <Router>
         <ScrollToTop />
         <div className="min-h-screen w-full flex flex-col font-sans text-brand-slate-dark selection:bg-brand-blue selection:text-white">
