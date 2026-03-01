@@ -1,28 +1,37 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
-import ProblemSection from "../components/ProblemSection";
-import FeatureSection from "../components/FeatureSection";
-import UseCases from "../components/UseCases";
+import ProductToggle from "../components/ProductToggle";
+import ChatCrumbsSection from "../components/ChatCrumbsSection";
+import DevCrumbsSection from "../components/DevCrumbsSection";
+import HowItWorks from "../components/HowItWorks";
+import SocialProof from "../components/SocialProof";
+import Pricing from "../components/Pricing";
 import FAQ from "../components/FAQ";
+import FeedbackSection from "../components/FeedbackSection";
 
-const LandingPage: React.FC = () => {
+export default function LandingPage() {
   return (
-    <main className="flex-grow">
+    <>
       <Helmet>
-        <title>Chatcrumbs | Pin AI Chats to Notion & Google Docs</title>
+        <title>ChatCrumbs | Stop losing context. Start proving impact.</title>
         <meta
           name="description"
-          content="Stop losing your AI research. Chatcrumbs is a Chrome extension that lets you pin ChatGPT, Claude, and Gemini chats directly to Notion, Google Docs, and Jira."
+          content="The browser extension that captures your AI chats and tracks your engineering work right where you are. Build context with ChatCrumbs and prove impact with DevCrumbs."
         />
       </Helmet>
-      <Hero />
-      <ProblemSection />
-      <FeatureSection />
-      <UseCases />
-      <FAQ />
-    </main>
-  );
-};
 
-export default LandingPage;
+      <main>
+        <Hero />
+        <ProductToggle />
+        <ChatCrumbsSection />
+        <DevCrumbsSection />
+        <HowItWorks />
+        {/* <SocialProof /> */}
+        {/* <Pricing /> - Temporarily disabled while product is entirely free */}
+        <FeedbackSection />
+        <FAQ />
+      </main>
+    </>
+  );
+}

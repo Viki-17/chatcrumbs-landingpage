@@ -1,185 +1,174 @@
 import React, { useState } from "react";
-import Button from "./Button";
-import { Link2, Mail, MessageSquare, X, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 import Logo from "./Logo";
 
-const Footer: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Footer() {
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
   return (
-    <footer className="bg-brand-pale/30 border-t border-brand-blue/10 pt-20 pb-10 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Final CTA */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-slate-dark mb-6 tracking-tight">
-            Help us shape the future of ChatCrumbs.
-          </h2>
-          <p className="text-lg text-brand-slate-medium mb-10 max-w-2xl mx-auto leading-relaxed">
-            We are building this MVP for users like you. Your feedback dictates
-            our roadmap. Try it out and tell us what's missing.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto px-10"
-              onClick={() =>
-                window.open(
-                  "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
-                  "_blank"
-                )
-              }
-            >
-              Add to Chrome
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto bg-white px-10"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Share Feedback
-            </Button>
-          </div>
-        </div>
+    <>
+      <section className="bg-brand-slate-dark text-white pt-24 pb-12 relative overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-blue/20 rounded-full blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[80px] pointer-events-none transform -translate-x-1/3 translate-y-1/3" />
 
-        {/* Links */}
-        <div className="border-t border-brand-slate-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2 text-brand-slate-dark font-semibold">
-            <div className="w-6 h-6 bg-brand-blue rounded flex items-center justify-center text-white">
-              <Logo
-                size={24}
-                className="group-hover:scale-105 transition-transform"
-              />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+            {/* Version Badge CTA */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium mb-8 backdrop-blur-md">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
+              </span>
+              v2.0 Beta • Free to use
             </div>
-            <span>ChatCrumbs</span>
+
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight">
+              Ready to{" "}
+              <span className="text-brand-blue relative inline-block">
+                upgrade
+              </span>{" "}
+              your browser?
+            </h2>
+
+            <div className="w-full max-w-sm mb-4">
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full h-14 text-lg bg-brand-blue hover:bg-blue-600 text-white font-bold border-none shadow-[0_0_40px_rgba(38,99,235,0.3)] transition-all hover:shadow-[0_0_60px_rgba(38,99,235,0.5)]"
+                onClick={() =>
+                  window.open(
+                    "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
+                    "_blank",
+                  )
+                }
+              >
+                Add to Chrome{" "}
+                <span className="text-sm opacity-80 font-normal ml-1">
+                  — It's free!
+                </span>
+              </Button>
+            </div>
           </div>
 
-          <div className="flex gap-8 text-sm text-brand-slate-medium">
-            <Link
-              to="/privacy-policy"
-              className="hover:text-brand-blue transition"
-            >
-              Privacy Policy
-            </Link>
-            {/* <a href="#" className="hover:text-brand-blue transition">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-brand-blue transition">
-              Contact
-            </a> */}
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 py-12 border-t border-white/10">
+            <div className="col-span-2 lg:col-span-2 pr-8 lg:pr-16">
+              <div className="flex items-center gap-2 mb-6">
+                <Logo size={28} />
+                <span className="font-bold text-xl text-white">ChatCrumbs</span>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+                The unified workspace for AI chats and engineering impact logs.
+                Stop losing context; start proving your value.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-6 tracking-wide">
+                Products
+              </h4>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href="#chatcrumbs"
+                    className="text-slate-400 hover:text-brand-blue transition-colors text-sm font-medium"
+                  >
+                    ChatCrumbs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#devcrumbs"
+                    className="text-slate-400 hover:text-amber-500 transition-colors text-sm font-medium"
+                  >
+                    DevCrumbs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#how-it-works"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    How it Works
+                  </a>
+                </li>
+                {/* <li>
+                  <a
+                    href="#pricing"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    Pricing
+                  </a>
+                </li> */}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-6 tracking-wide">
+                Resources
+              </h4>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    to="/blog"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="#faq"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#feedback"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    Submit Feedback
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-6 tracking-wide">Legal</h4>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    to="/privacy-policy"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div className="text-sm text-brand-slate-medium/50">
-            © {new Date().getFullYear()} ChatCrumbs.
-          </div>
-        </div>
-      </div>
-
-      {/* Feedback Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-          <div
-            className="absolute inset-0 bg-brand-slate-dark/40 backdrop-blur-sm"
-            onClick={() => setIsModalOpen(false)}
-          ></div>
-          <div className="relative bg-white w-full max-w-md rounded-3xl shadow-2xl border border-brand-slate-border overflow-hidden animate-in fade-in zoom-in duration-200">
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-brand-slate-dark mb-1">
-                    We'd love your feedback
-                  </h3>
-                  <p className="text-brand-slate-medium text-sm">
-                    Help us build the best version of ChatCrumbs.
-                  </p>
-                </div>
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="p-2 hover:bg-slate-100 rounded-full transition-colors text-brand-slate-medium"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-
-              <div className="space-y-4">
-                {/* Contact Options */}
-                <a
-                  href="mailto:hello@chatcrumbs.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl border border-brand-slate-border hover:border-brand-blue hover:bg-brand-blue/5 transition-all group"
-                >
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                    <Mail size={24} />
-                  </div>
-                  <div className="flex-grow">
-                    <div className="text-sm font-bold text-brand-slate-dark">
-                      Email Us
-                    </div>
-                    <div className="text-xs text-brand-slate-medium">
-                      hello@chatcrumbs.com
-                    </div>
-                  </div>
-                  <ExternalLink
-                    size={16}
-                    className="text-slate-300 group-hover:text-brand-blue"
-                  />
-                </a>
-
-                {/* <a
-                  href="#"
-                  className="flex items-center gap-4 p-4 rounded-2xl border border-brand-slate-border hover:border-[#5865F2] hover:bg-[#5865F2]/5 transition-all group"
-                >
-                  <div className="w-12 h-12 bg-[#5865F2]/10 rounded-xl flex items-center justify-center text-[#5865F2] group-hover:bg-[#5865F2] group-hover:text-white transition-colors">
-                    <MessageSquare size={24} />
-                  </div>
-                  <div className="flex-grow">
-                    <div className="text-sm font-bold text-brand-slate-dark">
-                      Discord Community
-                    </div>
-                    <div className="text-xs text-brand-slate-medium">
-                      Chat with the devs & users
-                    </div>
-                  </div>
-                  <ExternalLink
-                    size={16}
-                    className="text-slate-300 group-hover:text-[#5865F2]"
-                  />
-                </a>
-
-                <a
-                  href="#"
-                  className="flex items-center gap-4 p-4 rounded-2xl border border-brand-slate-border hover:border-[#FF4500] hover:bg-[#FF4500]/5 transition-all group"
-                >
-                  <div className="w-12 h-12 bg-[#FF4500]/10 rounded-xl flex items-center justify-center text-[#FF4500] group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
-                    <div className="font-bold text-xl">r/</div>
-                  </div>
-                  <div className="flex-grow">
-                    <div className="text-sm font-bold text-brand-slate-dark">
-                      Reddit Subreddit
-                    </div>
-                    <div className="text-xs text-brand-slate-medium">
-                      r/chatcrumbs
-                    </div>
-                  </div>
-                  <ExternalLink
-                    size={16}
-                    className="text-slate-300 group-hover:text-[#FF4500]"
-                  />
-                </a> */}
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-brand-slate-border text-center">
-                <p className="text-xs text-brand-slate-medium">
-                  Response time: Usually within 24 hours.
-                </p>
-              </div>
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-slate-500 text-sm text-center md:text-left">
+              &copy; {new Date().getFullYear()} ChatCrumbs. All rights reserved.
+            </div>
+            <div className="text-slate-500 text-sm text-center md:text-right">
+              Built with ❤️ for devs.
             </div>
           </div>
         </div>
-      )}
-    </footer>
+      </section>
+    </>
   );
-};
-
-export default Footer;
+}

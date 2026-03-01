@@ -19,14 +19,15 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Features", href: "/#features" },
+    { name: "ChatCrumbs", href: "/#chatcrumbs" },
+    { name: "DevCrumbs", href: "/#devcrumbs" },
+    // { name: "Pricing", href: "/#pricing" },
     { name: "FAQ", href: "/#faq" },
-    { name: "Blog", href: "/blog" },
   ];
 
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
@@ -91,8 +92,8 @@ const Navbar: React.FC = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <Logo
-              size={36}
-              className="group-hover:scale-105 transition-transform"
+              size={32}
+              className="group-hover:-rotate-3 transition-transform"
             />
 
             <span className="font-bold text-xl tracking-tight text-brand-slate-dark">
@@ -115,14 +116,15 @@ const Navbar: React.FC = () => {
             <Button
               variant="primary"
               size="md"
+              className="bg-brand-blue hover:bg-blue-600 text-white border-none"
               onClick={() =>
                 window.open(
                   "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
-              Add to Chrome - It's free!
+              Add to Chrome
             </Button>
           </div>
 
@@ -153,15 +155,15 @@ const Navbar: React.FC = () => {
           ))}
           <Button
             variant="primary"
-            className="w-full"
+            className="w-full bg-brand-blue hover:bg-blue-600 text-white border-none"
             onClick={() =>
               window.open(
                 "https://chromewebstore.google.com/detail/chatcrumbs/kakallfjlccgjklljjkgjobpcgoghoma?pli=1",
-                "_blank"
+                "_blank",
               )
             }
           >
-            Add to Chrome - It's free!
+            Add to Chrome
           </Button>
         </div>
       )}

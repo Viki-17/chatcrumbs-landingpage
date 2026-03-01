@@ -6,30 +6,29 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "How do I organize ChatGPT chats by project?",
+      question: "How does ChatCrumbs capture my AI chats?",
       answer:
-        'You can organize ChatGPT chats by using Chatcrumbs to "pin" specific chat URLs to a project-specific context, such as a Google Doc or Notion page. This creates a sidebar list of all relevant AI conversations for that specific work task.',
+        "When you're actively on a supported AI platform (like ChatGPT, Claude, or Gemini), ChatCrumbs securely captures the URL and the context when you choose to save it. It does not actively 'listen' to your browsing elsewhere.",
     },
     {
-      question:
-        "Can I link Claude and Gemini conversations to my work documents?",
+      question: "Where is my data stored?",
       answer:
-        'Yes, Chatcrumbs supports ChatGPT, Claude, and Gemini. It allows you to bridge the gap between your "thinking" in AI chat apps and your "building" in apps like Notion, GitHub, and Jira.',
+        "All your data for both ChatCrumbs and DevCrumbs is stored securely on server.",
     },
     {
-      question: "What is the best way to save AI prompts for future reference?",
+      question: "Can I export my DevCrumbs logs?",
       answer:
-        "The most efficient way is to use a context-aware browser extension like Chatcrumbs. Instead of manual copy-pasting, you can tag AI threads with custom notes and link them directly to the document where you are working.",
+        "Yes. You can copy your summaries directly to your clipboard, and you will soon be able to export your entire timeline as CSV or Markdown. (Coming Soon)",
     },
     {
-      question: "Does Chatcrumbs work with Notion and Google Docs?",
+      question: "Does DevCrumbs read my private Jira or GitHub data?",
       answer:
-        'Absolutely. Chatcrumbs is designed to detect when you are on a "Work App" like Notion or Google Docs and automatically displays the specific AI "breadcrumbs" (chats) you’ve pinned to that document.',
+        "No. DevCrumbs only logs the URLs and branch titles you explicitly tell it to save (or that you click the Quick Log button on). It has no backend access to your company's private repositories or ticket boards.",
     },
     {
-      question: "How do I find a specific AI chat from weeks ago?",
+      question: "Is it really free?",
       answer:
-        "Rather than searching through a chronological history, Chatcrumbs lets you view a curated list of AI threads associated with a specific project. Open your project document, and the Chatcrumbs sidebar will show every relevant AI interaction you’ve saved.",
+        "Yes! The core functionality for both ChatCrumbs and DevCrumbs is 100% free. We plan to introduce a paid Pro tier later for power users who want unlimited links storage and advanced AI review features.",
     },
   ];
 
